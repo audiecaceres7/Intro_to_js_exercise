@@ -4,9 +4,15 @@ import { data } from "../data/data";
 // Return a Planet name by a given moon name
 // Return example: 'Planet Name'
 
-export function findPlanetNameByMoon(data, moonName) {
+export function findPlanetNameByMoon({planets}, moonName) {
   // Your code goes here...
-}
+    return planets.filter((item) => {
+      let check = item.moons ?? [''];
+      if (check.includes(moonName)) {
+        return item.name;
+    }
+  }).map((item) => item.name).pop();
+};
 
 
 

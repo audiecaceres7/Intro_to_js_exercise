@@ -4,8 +4,11 @@ import { data } from "../data/data";
 // Return an array of Planets' names with less than 10 moons
 // Return example: ['name1', 'name2', ... , 'nameN']
 
-export function lowMoonsPlanets(data) {
+export function lowMoonsPlanets({planets}) {
   // Your code goes here...
+  return planets
+  .filter((item) => item.moonsCount < 10)
+  .map((item) => item.name);
 }
 
 
